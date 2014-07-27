@@ -1,8 +1,29 @@
-The data downloaded represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
+The data downloaded represents data collected from the accelerometers from the Samsung Galaxy S smartphone.
+
+A full description is available at the site where the data was obtained: 
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 Here are the data for the project: 
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+
+The script run_analysis.R downloads and extracts the zipped UCI HAR Dataset.
+
+Then two included sub-datasets, a training dataset and a test data set, are seperately read and subject and activity information is added as two additional 
+	variables for each observaition.
+
+Activity labels are converted from numeric coded values to descriptive character values.
+
+The two datasets are then combined into a single set of all of the observations for all subjects.
+
+Column names are then loaded from the dataset and added to this dataframe.
+
+This dataset is then reduced to only the columns for mean and standard deviation measurements.
+
+Finally, the data is summarized into the mean of each variable for each combination of subject and activity.
+
+This tidy dataset is then saved as "bysubjectandlabel.txt" to the working directory, and my be read using read.table()
+
 
